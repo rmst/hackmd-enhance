@@ -1,9 +1,9 @@
 {
-  "name": "Hackmd Enhance",
+  "name": "HackMD Enhance",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Auto Creat Documents",
-  "homepage_url": "http://simonramstedt.com",
+  "description": "Shortcuts and Tools for HackMD",
+  "homepage_url": "https://github.com/rmst/hackmd-enhance",
    "background": {
      "scripts": [
        "background.js"
