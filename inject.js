@@ -24,7 +24,7 @@ function sleep(ms) {
 
 async function makeNewDoc() {
   let iframe = document.createElement("iframe");
-  iframe.setAttribute("src", "https://hackmd.io/MYUw7AzADATArADgLQBYYE4qpXLCYTBJQBGIAZgsAIZzkgrpA===");
+  iframe.setAttribute("src", "https://hackmd.io/new");
   iframe.style.visibility = 'hidden';
   document.body.appendChild(iframe);
 
