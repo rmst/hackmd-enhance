@@ -1,0 +1,27 @@
+{
+  "name": "Hackmd Enhance",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Auto Creat Documents",
+  "homepage_url": "http://simonramstedt.com",
+   "background": {
+     "scripts": [
+       "background.js"
+     ],
+     "persistent": true
+   },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://hackmd.io/*"],
+      "js": ["inject.js"]
+    }
+  ]
+}
