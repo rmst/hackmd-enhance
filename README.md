@@ -1,10 +1,17 @@
 # HackMD-Enhance
 A Google Chrome extention for https://hackmd.io
 
-### Create + Link a New Document:
-- press `alt+n` (you can change the shortcut in the options)
-- type a name / link label
-- enter (or `shift+enter` to open the new document)
+![ss](/screen.png)
+
+### Open a document:
+- press `alt + o`
+- type the name of the doc (non-existing docs will be created)
+- press enter (or `shift+enter` to open in a new tab)
+
+### Link to a document:
+- press `alt + l` (you can change the shortcut in the options)
+- type the name of the doc (non-existing docs will be created)
+- press enter (or `shift+enter` to open the linked document in a new tab)
 
 ### Manual Installation
 - download zip and unpack or clone this repo

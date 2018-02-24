@@ -1,6 +1,6 @@
 // Saves options to chrome.storage
 
-const DEFAULT_OPTIONS = '{\n"new_doc" : "alt+n" \n}';
+const DEFAULT_OPTIONS = '{\n"link_doc": "alt+l", \n "open_doc": "alt+o" \n}';
 
 
 function save_options() {
