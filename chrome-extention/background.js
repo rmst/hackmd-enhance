@@ -1,14 +1,3 @@
-const DEFAULT_OPTIONS = '{\n  "link_doc": "alt+l", \n  "open_doc": "alt+o" \n}';
-
-
-let options = null;
-chrome.storage.sync.get({
-  options: DEFAULT_OPTIONS
-}, function(items) {
-  console.log(items.options);
-  options = JSON.parse(items.options);
-});
-
 function get(url){
   return new Promise(resolve => {
     let xhr = new XMLHttpRequest();

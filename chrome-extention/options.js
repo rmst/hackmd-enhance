@@ -1,6 +1,6 @@
 // Saves options to chrome.storage
 
-const DEFAULT_OPTIONS = '{\n  "link_doc": "alt+l", \n  "open_doc": "alt+o" \n}';
+const DEFAULT_OPTIONS = '{\n  "link_doc": "alt+l", \n  "open_doc": "alt+o", \n  "backlink": true \n}';
 
 
 function save_options() {

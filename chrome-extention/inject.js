@@ -3,18 +3,7 @@
 if (document.body.innerHTML.includes("https://github.com/hackmdio/codimd")){
   console.log("CodiMD detected, injecting CodiMD Enhance");
 
-  const DEFAULT_OPTIONS = '{\n  "link_doc": "alt+l", \n  "open_doc": "alt+o" \n}';
-
-  // const ENTER = 13;
-  // const ESCAPE = 27;
-  // const KEY_N = 78;
-
-  // console.log(editor);
-
-
-  // var x = document.getElementsByClassName("ui-edit-area")[0];
-  // x.focus();
-
+  const DEFAULT_OPTIONS = '{\n  "link_doc": "alt+l", \n  "open_doc": "alt+o", \n  "backlink": true \n}';
 
   let options = null;
   chrome.storage.sync.get({
@@ -142,9 +131,9 @@ if (document.body.innerHTML.includes("https://github.com/hackmdio/codimd")){
           var content = "# " + name
           let potential_id = window.location.pathname.substring(1)
           current_doc = history.filter(doc => doc.id === potential_id)[0];
-          console.log("make_doc current_doc = " + potential_id + " " + current_doc);
+          // console.log("make_doc current_doc = " + potential_id + " " + current_doc);
 
-          if (current_doc != null){
+          if (options.backlink && current_doc != null){
             content = content + "\n" + "[↖ " + current_doc.text + "](/" + current_doc.id + ")";
           }
 
