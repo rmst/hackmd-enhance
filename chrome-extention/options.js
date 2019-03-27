@@ -1,10 +1,10 @@
 // Saves options to chrome.storage
 
-const DEFAULT_OPTIONS = '{\n"link_doc": "alt+l", \n "open_doc": "alt+o" \n}';
+const DEFAULT_OPTIONS = '{\n  "link_doc": "alt+l", \n  "open_doc": "alt+o" \n}';
 
 
 function save_options() {
-  var options = document.getElementById('options').innerHTML;
+  var options = document.getElementById('options').value;
   chrome.storage.sync.set({
     options: options
   }, function() {
