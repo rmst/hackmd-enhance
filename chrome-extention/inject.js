@@ -111,19 +111,31 @@ if (document.body.innerHTML.includes("https://github.com/hackmdio/codimd")){
       previousFocus.focus();
       newDocumentDialogInstance = null
     };
+    
+    inp.addEventListener("focusout", self.cleanup);
+    inp.addEventListener('click', (e) => e.stopPropagation());
+    self.div.addEventListener('click', self.cleanup);
 
-    div_key_down = async (e) => {
-      console.log(e.key);
+    self.div.addEventListener('keydown',  async (e) => {
+      // console.log(e.key);
       if(e.key === "Tab"){
         e.preventDefault();  // do not switch focus
       }
       else if(e.key === "Enter"){
         e.stopPropagation();  // no auto-complete on enter (use tab instead)
+      }
+      else if(e.key === "Escape"){
+        self.cleanup();
+      }
+    }, true);
+
+    self.div.addEventListener("keyup", async (e) => {
+      if(e.key === "Enter"){
+        // e.stopPropagation();
 
         let name = inp.value;
 
         previousFocus.focus();
-        // self.cleanup();
 
         let url;
 
@@ -155,28 +167,7 @@ if (document.body.innerHTML.includes("https://github.com/hackmdio/codimd")){
           });
         }
       }
-      else if(e.key === "Escape"){
-        self.cleanup();
-      }
-    }
-    
-    inp.addEventListener("focusout", self.cleanup);
-    self.div.addEventListener('keydown', div_key_down , true);
-
-    // self.docKeyDown = e => {if(e.key === "Escape"){self.cleanup()}}
-    // document.addEventListener('keydown', self.docKeyDown , true);
-
-    inp.addEventListener('click', (e) => e.stopPropagation());
-
-    // self.docKeyUp = (e) => {
-    //   if(e.which === ESCAPE)
-    //     self.cleanup();
-    // };
-    //
-    // document.addEventListener('keyup', self.docKeyUp , true);
-    // inp.addEventListener('keyup', self.docKeyUp , true);
-
-    self.div.addEventListener('click', self.cleanup);
+    }, true);
 
     return self;
   }
